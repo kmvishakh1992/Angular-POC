@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component'
 import { SignupFormComponent } from './signup-form/signup-form.component'
 
+import { UsernameValidators } from './signup-form/username.validators'
+
 import { CourseService } from './course/course.service';
-import { FormsModule } from '@angular/forms'; // <== add the imports!
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <== add the imports!
 
 @NgModule({
   declarations: [
@@ -18,10 +20,12 @@ import { FormsModule } from '@angular/forms'; // <== add the imports!
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
-    CourseService
+    CourseService,
+    UsernameValidators
   ],
   bootstrap: [AppComponent]
 })
